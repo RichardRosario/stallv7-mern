@@ -2,6 +2,8 @@ const express = require('express')
 const mongoose = require('mongoose')
 
 require('dotenv').config()
+
+// import user routes
 const userRoutes = require('./routes/user')
 
 // db
@@ -16,7 +18,7 @@ const app = express()
 
 // routes
 
-app.use(userRoutes)
+app.use('/api', userRoutes)
 
 const port = process.env.PORT || 8080
 
